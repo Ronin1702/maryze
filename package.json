@@ -1,0 +1,13 @@
+{
+  "name": "project2",
+  "version": "1.0.0",
+  "description": "This is Team One's Project 2 Repository.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "Jianxiong Chen, Ceres Cook, Kai Chen, Vignolles-jeong Ian",
+  "license": "ISC"
+}
