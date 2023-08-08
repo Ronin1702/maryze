@@ -1,0 +1,3 @@
+DROP DATABASE IF EXISTS letters_db;
+
+CREATE DATABASE letters_db;
