@@ -9,11 +9,11 @@ Letters.init({
         primaryKey: true,
         autoIncrement: true
     },
-    company_name: {
+    prompt_id: {
         type: DataTypes.STRING,
         references: {
             model: 'prompt',
-            key: 'company_name'
+            key: 'id'
         }
     },
     user_id: {
