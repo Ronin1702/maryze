@@ -1,0 +1,22 @@
+<div class="ui inverted vertical masthead center aligned segment navbar">
+  <div class="ui container">
+    <div class="ui large secondary inverted pointing menu">
+      <div class="item">
+        <i class="laptop code icon" style="visibility: visible;"></i>
+        <i class="blog icon" style="visibility: visible;"></i>
+      </div>
+      <a href="/" class="{{isActive '/'}} item">
+        Home
+      </a>
+      {{#if logged_in}}
+      <a href="javascript:void(0)" id="logout" class="{{isActive '/logout'}} item">
+        Logout
+      </a>
+      {{else}}
+      <a href="/login" class="{{isActive '/login'}} item">
+        Login
+      </a>
+      {{/if}}
+    </div>
+  </div>
+</div>
