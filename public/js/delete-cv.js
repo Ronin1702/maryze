@@ -19,4 +19,4 @@ async function deleteCV(event) {
 
 }
 
-document.getElementById('delete-button').addEventListener('click', deletePost);
+document.getElementById('delete-button').addEventListener('click', deleteCV);
