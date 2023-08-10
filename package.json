@@ -10,7 +10,7 @@
     "seed":" node ./seeds/index.js"
   },
   "keywords": [],
-  "author": "Jianxiong Chen, Ceres Cook, Kai Chen, Vignolles-jeong Ian",
+  "author": "Jianxiong Chen, Ceres Cook, Kai Chen, Ian Vignolles-Jeong",
   "license": "MIT",
   "dependencies": {
     "bcrypt": "^5.0.0",
