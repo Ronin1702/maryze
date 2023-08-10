@@ -19,8 +19,9 @@ router.post('/', withAuth, async (req, res) => {
             rel_skills3: req.body.rel_skills3,
             user_id: req.session.user_id,
         });
-
+        res.render('create-cv', { promptData, logged_in: true })
         res.json(promptData);
+
     } catch (err) {
         console.log(err);
         res.status(500).json(err);
