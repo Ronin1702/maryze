@@ -5,11 +5,12 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js",
+    "watch": "nodemon server.js"
   },
   "keywords": [],
   "author": "Jianxiong Chen, Ceres Cook, Kai Chen, Vignolles-jeong Ian",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "bcrypt": "^5.0.0",
     "connect-session-sequelize": "^7.0.4",
@@ -17,7 +18,9 @@
     "express": "^4.17.1",
     "express-handlebars": "^5.2.0",
     "express-session": "^1.17.1",
+    "fomantic-ui": "^2.9.2",
     "mysql2": "^2.2.5",
+    "nodemon": "^3.0.1",
     "sequelize": "^6.3.5"
-}
+  }
 }

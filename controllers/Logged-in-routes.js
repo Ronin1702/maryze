@@ -4,7 +4,7 @@ const { Letters, Prompt, User } = require('../models');
 const withAuth = require('../utils/auth')
 
 
-// go to /dashboard, if you are logged in, you will get all cover letters you alrady have
+// go to /dashboard, if you are logged in, you will get all cover letters you already have
 router.get('/', withAuth, async (req, res) => {
     try {
         const cvData = await Letters.findAll({
