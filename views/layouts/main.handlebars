@@ -5,22 +5,29 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Maryze</title>
-  <link rel="stylesheet" href="/public/css/styles.css">
+  <link rel="stylesheet" href="/css/styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=BioRhyme&family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&family=Montserrat&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=BioRhyme&family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&family=Montserrat&display=swap"
+    rel="stylesheet">
 </head>
 
 <body>
 
-    {{> header}}
-    {{{ body }}}
-    {{> footer}}
-    
+  {{> header}}
+  {{{ body }}}
+  {{> footer}}
+  <script src="/js/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="/semantic/dist/semantic.min.css" />
+  <script src="/semantic/dist/semantic.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
 
-    {{#if loggedIn}}
-    <script src="/public/js/lotout.js"></script>
-    {{/if}}
+  {{#if loggedIn}}
+  <script src="/js/logout.js"></script>
+  {{/if}}
+
 
 </body>
 
