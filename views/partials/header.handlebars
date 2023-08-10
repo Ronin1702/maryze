@@ -5,15 +5,18 @@
         <i class="laptop code icon" style="visibility: visible;"></i>
         <i class="blog icon" style="visibility: visible;"></i>
       </div>
-      <a href="/" class="item">
+      <a href="/" class="{{isActive}} item">
         Home
+      </a>
+      <a href="/dashboard" class="{{isActive}} item">
+        Dashboard
       </a>
       {{#if logged_in}}
       <a href="javascript:void(0)" id="logout" class="item">
         Logout
       </a>
       {{else}}
-      <a href="/login" class="{item">
+      <a href="/login" class="{{isActive}} item">
         Login
       </a>
       {{/if}}
