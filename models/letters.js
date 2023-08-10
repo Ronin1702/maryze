@@ -10,7 +10,7 @@ Letters.init({
         autoIncrement: true
     },
     prompt_id: {
-        type: DataTypes.STRING,
+        type: DataTypes.INTEGER,
         references: {
             model: 'prompt',
             key: 'id'
