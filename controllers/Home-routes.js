@@ -31,6 +31,7 @@ router.get('/signup', (req, res) => {
     res.render('signup');
 });
 
+// no log out because our log out is just a button
 
 module.exports = router;
 

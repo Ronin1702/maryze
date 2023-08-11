@@ -4,7 +4,7 @@ const { Prompt } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 
-// /api/prompt and using get to find all answered prompt under this user
+// /api/prompts and using get to find all answered prompt under this user
 router.get('/', withAuth, async (req, res) => {
     try {
         const promptData = await Prompt.findAll({
@@ -17,7 +17,7 @@ router.get('/', withAuth, async (req, res) => {
     }
 });
 
-// /api/prompt/${id} and using get to find one that you want
+// /api/prompts/${id} and using get to find one that you want
 router.get('/:id', withAuth, async (req, res) => {
     try {
         const promptData = await Prompt.findOne({
@@ -37,7 +37,7 @@ router.get('/:id', withAuth, async (req, res) => {
     }
 });
 
-// /api/prompt/crate and using post method to create a new prompt
+// /api/prompts/crate and using post method to create a new prompt
 router.post('/create', withAuth, async (req, res) => {
     try {
         const newPrompt = await Prompt.create({
@@ -59,7 +59,7 @@ router.post('/create', withAuth, async (req, res) => {
     }
 });
 
-// /api/prompt/${id} and using put to update prompt that you want
+// /api/prompts/${id} and using put to update prompt that you want
 router.put('/:id', withAuth, async (req, res) => {
     try {
         const promptData = await Prompt.findOne({
@@ -90,7 +90,7 @@ router.put('/:id', withAuth, async (req, res) => {
     }
 });
 
-// /api/prompt/${id} and using delete to delete prompt, I added ondelete in models/index.js
+// /api/prompts/${id} and using delete to delete prompt, I added ondelete in models/index.js
 // if you delete this prompt, the cv letter under this prompt should be delete as well  
 router.delete('/:id', withAuth, async (req, res) => {
     try {
