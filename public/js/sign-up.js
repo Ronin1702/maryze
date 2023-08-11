@@ -22,4 +22,4 @@ async function signup(event) {
     }
 }
 
-document.querySelector('.signup-form').addEventListener('submit', signup);
+document.querySelector('#signup-form').addEventListener('submit', signup);
