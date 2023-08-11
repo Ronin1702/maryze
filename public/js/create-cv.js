@@ -12,8 +12,8 @@ async function createCV(event) {
     const cvSkill3 = document.getElementById('skill3').value.trim();
 
 
-    if (cvName && cvEmail && cvCompany && cvPosition && cvSkill1 && cvSkill2 && cvSkill3) {
-        const response = await fetch(`/api/letters/{id}`, {
+    if (cvName && cvEmail && cvCompany && cvPosition && cvSkill1 && cvSkill2 && cvSkill3 && cvWorkExp && cvEducation) {
+        const response = await fetch('/create', {
             method: 'POST',
             body: JSON.stringify({ cvName, 
                 cvEmail, 
@@ -29,9 +29,9 @@ async function createCV(event) {
             }
         });
         if (response.ok) {
-            document.location.reload();
+            document.location.replace('/dashboard');
         } else {
-            alert("An error occured, please try again.");
+            alert("An error occurred, please try again.");
         }
     } else {
         alert("CV cannot be not created. Required elements can not be missing.");
