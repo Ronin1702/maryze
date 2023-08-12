@@ -83,62 +83,20 @@ router.put('/edit/:id', withAuth, async (req, res) => {
 });
 
 
-//  this is /dashboard/:id to create
-router.post('/:id', withAuth, async (req, res) => {
+//  this is /dashboard/create to create
+router.get('/create', withAuth, (req, res) => {
     try {
-        const prompt = await Prompt.findOne({
-            where: {
-                id: req.params.id,
-                user_id: req.session.user_id,
-            },
-        });
-
-        if (!prompt) {
-            return res.status(404).json({ message: 'Prompt not found, can not create' });
-        }
-        const newLetter = await Letters.create({
-            letter_body: `
-            ${prompt.full_name}
-            ${prompt.date}
-            ${prompt.company_name}
-            ${prompt.email}
-            
-            Dear Hiring and Recruitment team!
-            
-            Upon learning that there is a ${prompt.job_title} position opportunity at ${prompt.company_name},
-            I was excited to reach out and introduce myself. When reviewing the job description,
-            I saw that my skills and experience align with your company's needs and position requirements.
-            What I offer as a professional, I feel collaborates well with your company's core mission and culture.
-            
-            I am an seasoned professional with over ${prompt.work_exp} years of relevant experience.
-            I have developed myself and honed my ${prompt.rel_skills1}, ${prompt.rel_skills2}, and ${prompt.rel_skills3} skill sets,
-            making me an ideal fit for the ${prompt.job_title} position.
-            
-            My current educational level is ${prompt.education_exp}.
-            
-            I am excited at the prospect of bringing my talents to ${prompt.company_name}.
-            I look forward to hearing from you, at your earliest convenience,
-            to discuss how my experience and qualifications will prove valuable in the ${prompt.job_title} role.
-            
-            Thank you for your time and consideration.
-            
-            Sincerely,
-            ${prompt.full_name}
-            ${prompt.date}
-            ${prompt.company_name}
-            ${prompt.email}
-            `,
-            prompt_id: req.params.promptid,
-            user_id: req.session.user_id,
-        });
-
-        const newLetters = newLetter.get({ plain: true });
-        res.render('create-cv', { newLetters, logged_in: true });
+        res.render('create-cv', { logged_in: true });
     } catch (err) {
         console.log(err);
-        res.status(500).json(err);
+        res.status(500).json({
+            message: 'Failed to render create page',
+            error: err
+        });
     }
 });
+
+
 
 // /dashboard/${id} to delete one letter
 router.delete('/:id', withAuth, async (req, res) => {
