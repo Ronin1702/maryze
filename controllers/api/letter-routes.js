@@ -129,7 +129,29 @@ router.delete('/:letterid', withAuth, async (req, res) => {
 });
 
 
+router.put('/:id', withAuth, async (req, res) => {
+    try {
+        const letter = await Letters.findOne({
+            where: {
+                id: req.params.id,
+                user_id: req.session.user_id,
+            },
+        });
 
+        if (!letter) {
+            return res.status(404).json({ message: 'Letter not found' });
+        }
+        await letter.update({
+            letter_body: req.body.letter_body,
+        });
+
+        const letters = letter.get({ plain: true });
+        res.render('edit-cv', { letters, logged_in: true });
+    } catch (err) {
+        console.log(err);
+        res.status(500).json(err);
+    }
+});
 
 
 
