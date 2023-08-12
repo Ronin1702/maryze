@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { User } = require('../../models');
+const withAuth = require('../../utils/auth');
 
 // /api/users
 router.post('/', async (req, res) => {
@@ -66,6 +67,49 @@ router.get('/logout', (req, res) => {
     }
 });
 
+// api/users/id  use put to update user info
+router.put('/:id', withAuth, async (req, res) => {
+    try {
+        const userData = await User.findByPk(req.params.id);
+        if (userData) {
+            await userData.update({
+                username: req.body.username,
+                email: req.body.email,
+                password: req.body.password
+            });
+            req.session.save(() => {
+                req.session.user_id = userData.id;
+                req.session.name = userData.username;
+                req.session.logged_in = true;
+
+                res.json(userData);
+            })
+        } else {
+            res.status(404).json({ message: 'User not found' });
+        }
+    } catch (err) {
+        console.log(err);
+        res.status(500).json(err);
+    }
+});
+
+// api/user/id  use delete to delete user  
+router.delete('/:id', withAuth, async (req, res) => {
+    try {
+        const userData = await User.findByPk(req.params.id);
+        if (userData) {
+            await userData.destroy();
+            req.session.destroy(() => {
+                res.json({ message: 'User deleted' });
+            });
+        } else {
+            res.status(404).json({ message: 'User not found' });
+        }
+    } catch (err) {
+        console.log(err);
+        res.status(500).json(err);
+    }
+});
 
 
 module.exports = router;

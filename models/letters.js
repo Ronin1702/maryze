@@ -1,13 +1,17 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Letters extends Model {}
+class Letters extends Model { }
 
 Letters.init({
     id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true
+    },
+    letter_body: {
+        type: DataTypes.TEXT,
+        allowNull: false,
     },
     prompt_id: {
         type: DataTypes.INTEGER,
@@ -24,11 +28,11 @@ Letters.init({
             key: 'id'
         }
     },
-}, 
-{
-    sequelize,
-    freezeTableName: true,
-    underscored: true,
-    modelName: 'letter'
-});
+},
+    {
+        sequelize,
+        freezeTableName: true,
+        underscored: true,
+        modelName: 'letter'
+    });
 module.exports = Letters;

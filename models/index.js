@@ -4,20 +4,21 @@ const Letters = require('./letters');
 
 
 Prompt.hasOne(Letters, {
-    foreignKey: 'prompt_id'
+    foreignKey: 'prompt_id',
+    onDelete: 'CASCADE',
 });
 
 
 Letters.belongsTo(Prompt, {
     foreignKey: 'prompt_id',
-    onDelete: 'CASCADE'
 });
 
 
 
 
 User.hasMany(Letters, {
-    foreignKey: 'user_id'
+    foreignKey: 'user_id',
+    onDelete: 'CASCADE',
 });
 
 Letters.belongsTo(User, {
@@ -25,7 +26,8 @@ Letters.belongsTo(User, {
 });
 
 User.hasMany(Prompt, {
-    foreignKey: 'user_id'
+    foreignKey: 'user_id',
+    onDelete: 'CASCADE',
 });
 
 Prompt.belongsTo(User, {
