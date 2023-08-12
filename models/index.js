@@ -5,7 +5,7 @@ const Letters = require('./letters');
 
 Prompt.hasOne(Letters, {
     foreignKey: 'prompt_id',
-    onDelete: 'CASCADE',
+    // onDelete: 'CASCADE',
 });
 
 
