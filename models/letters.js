@@ -9,6 +9,10 @@ Letters.init({
         primaryKey: true,
         autoIncrement: true
     },
+    // letter_name: {
+    //     type: DataTypes.STRING,
+    //     allowNull: false,
+    // },
     letter_body: {
         type: DataTypes.TEXT,
         allowNull: false,
