@@ -83,13 +83,12 @@ router.post('/:promptid', withAuth, async (req, res) => {
 
 
 
-// /api/letters/${letterid} to find one letter
-router.get('/:letterid', withAuth, async (req, res) => {
+// /api/letters/${id} to find one letter
+router.get('/:id', async (req, res) => {
     try {
         const letter = await Letters.findOne({
             where: {
-                id: req.params.letterid,
-                user_id: req.session.user_id,
+                id: req.params.id,
             },
         });
 
@@ -104,24 +103,19 @@ router.get('/:letterid', withAuth, async (req, res) => {
     }
 });
 
-// /api/letters/${letterid} to delete one letter
-router.delete('/:letterid', withAuth, async (req, res) => {
+// /api/letters/${id} to delete one letter
+router.delete('/:id', withAuth, async (req, res) => {
     try {
         // find that letter first
-        const letter = await Letters.findOne({
+        const letter = await Letters.destroy({
             where: {
-                id: req.params.letterid,
-                user_id: req.session.user_id,
+                id: req.params.id,
             },
         });
 
         if (!letter) {
             return res.status(404).json({ message: 'Letter not found' });
         }
-
-        // delete letter
-        await letter.destroy();
-
         res.json({ message: 'Letter deleted' });
     } catch (err) {
         console.log(err);
