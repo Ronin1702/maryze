@@ -9,10 +9,10 @@ Prompt.init({
         primaryKey: true,
         autoIncrement: true
     },
-    // file_name: {
-    //     type: DataTypes.STRING,
-    //     allowNull: false,
-    // },
+    file_name: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
     // User's full name
     full_name: {
         type: DataTypes.TEXT,

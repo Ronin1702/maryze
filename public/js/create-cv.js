@@ -1,7 +1,7 @@
 async function createCV(event) {
     event.preventDefault();
 
-    // const letter = document.getElementById('coverName').value.trim();
+    const letterName = document.getElementById('coverName').value.trim();
     const cvName = document.getElementById('fullName').value.trim();
     const cvEmail = document.getElementById('email').value.trim();
     const cvCompany = document.getElementById('company').value.trim();
@@ -18,7 +18,7 @@ async function createCV(event) {
         const response = await fetch('/api/prompts/create', {
             method: 'POST',
             body: JSON.stringify({
-                // file_name: letter,
+                file_name: letterName,
                 full_name: cvName,
                 email: cvEmail,
                 company_name: cvCompany,
@@ -39,7 +39,7 @@ async function createCV(event) {
                 method: 'POST',
                 body: JSON.stringify({
                     prompt_id: responseData.id,
-                    // letter_name: `${responseData.file_name}`,
+                    letter_name: `${responseData.file_name}`,
                     letter_body: `
                     ${responseData.full_name}
                     ${responseData.created_at}
