@@ -1,14 +1,31 @@
 <div class="ui column">
   <div class="ui card" style="padding:1em">
-    <h2>Edit your cover letter!</h2>
-    <h3>Copy and paste the completed product into your word processor of choice for styling and saving!</h3>
-  <div class="ui form">
-  <div class="field">
-    <label>Text</label>
-    <textarea>{{Letters.id}}</textarea>
+    <h2>Edit or Delete your cover letter!</h2>
+    <h3>Change the letter content in the next textarea:</h3>
+    <div class="ui form">
+      <div class="field">
+        <label>
+          <h4>Letter name: <input type="text" class="form-control" value="{{onecover.letter_name}}" id="letter_name">
+          </h4>
+        </label>
+        <h4>Letter content:
+          <textarea rows="30" cols="50" id="body">{{onecover.letter_body}}</textarea>
+        </h4>
+      </div>
+    </div>
+    <div class=" row">
+      <button type="button" class="btn btn-info mx-auto col-3" id="edit-button">Update this cover letter</button>
+      <button type="button" class="btn btn-info mx-auto col-3" id="delete-button">Delete this cover letter</button>
+    </div>
+  </div>
+</div>
+<div class="ui column">
+  <div class="ui card" style="padding:1em">
+    <h2>Generated cover letter:</h2>
+    <textarea rows="30" cols="50" readonly>{{onecover.letter_body}}</textarea>
   </div>
 </div>
 
 
-
-
+<script src="/js/edit.js"></script>
+<script src="/js/delete.js"></script>

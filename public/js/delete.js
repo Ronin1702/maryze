@@ -1,3 +1,4 @@
+
 async function deleteCV(event) {
     event.preventDefault();
 
@@ -5,7 +6,7 @@ async function deleteCV(event) {
 
     const response = await fetch(`/api/letters/${id}`, {
         method: 'DELETE',
-        body: JSON.stringify({ letters_id: id }),
+        body: JSON.stringify({ id }),
         headers: {
             'Content-Type': 'application/json'
         }

@@ -9,10 +9,11 @@ Letters.init({
         primaryKey: true,
         autoIncrement: true
     },
-    // letter_name: {
-    //     type: DataTypes.STRING,
-    //     allowNull: false,
-    // },
+    // added a letter name and we can use this more dynamic 
+    letter_name: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
     letter_body: {
         type: DataTypes.TEXT,
         allowNull: false,
