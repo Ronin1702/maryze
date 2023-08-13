@@ -1,36 +1,14 @@
-
-async function deleteCV(event) {
-    event.preventDefault();
-
-    const id = window.location.toString().split('/').pop();
-
-    const response = await fetch(`/api/letters/${id}`, {
-        method: 'DELETE',
-        body: JSON.stringify({ id }),
-        headers: {
-            'Content-Type': 'application/json'
-        }
-    });
-
-    if (response.ok) {
-        document.location.replace('/dashboard');
-    } else {
-        alert("Oops! Something went wrong!");
-    }
-
-}
-
 async function editCV(event) {
     event.preventDefault();
 
     const id = window.location.toString().split('/').pop();
-    const body = document.getElementById('body').value.trim();
+    const letter_body = document.getElementById('body').value.trim();
     const letter_name = document.getElementById('letter_name').value.trim();
 
     if (body && letter_name) {
-        const response = await fetch(`/api/letter/${id}`, {
+        const response = await fetch(`/api/letters/${id}`, {
             method: 'PUT',
-            body: JSON.stringify({ id, letter_name, body }),
+            body: JSON.stringify({ id, letter_name, letter_body }),
             headers: {
                 'Content-Type': 'application/json'
             }
@@ -47,6 +25,4 @@ async function editCV(event) {
 
 }
 
-
-document.getElementById('delete-button').addEventListener('click', deleteCV);
 document.getElementById('edit-button').addEventListener('click', editCV);
