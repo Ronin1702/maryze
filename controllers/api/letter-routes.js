@@ -143,6 +143,7 @@ router.put('/:id', withAuth, async (req, res) => {
             return res.status(404).json({ message: 'Letter not found' });
         }
         await letter.update({
+            letter_name: req.body.letter_name,
             letter_body: req.body.letter_body,
         });
 
