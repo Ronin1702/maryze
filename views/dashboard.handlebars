@@ -5,22 +5,11 @@
   <div class="ui card" style="padding:1em">
     <h2>Your Cover Letters!:</h2>
     <div class="ui feed" id="blog-feed">
-      {{#unless users}}
-      <p>Nothing Here Yet.</p>
-      <p>Click Create CV button to get started!</p>
-      {{/unless}}
-      {{#each users}}
-      {{#each Letters}}
-      <div class="event">
-        <div class="content">
-          <div class="summary">
-            <a href="javascript:void(0)" onclick="showLetters('{{id}}')">{{Letters}}</a>
-            <div class="date">{{formatDate letters_date}}</div>
-          </div>
-        </div>
-      </div>
+      {{#if covers.length}}
+      {{#each covers as |letter|}}
+      {{>dashletter letter}}
       {{/each}}
-      {{/each}}
+      {{/if}}
     </div>
   </div>
 </div>

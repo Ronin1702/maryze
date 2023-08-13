@@ -1,25 +1,30 @@
 <div class="ui form padding-100">
   <div class="grouped fields">
     <div class="field">
+      <!--cover letter name-->
+      {{!-- <label>Doc Name</label>
+      <input type="text" id="coverName" placeholder="Doc Name" required>
+    </div>
+    <div class="field"> --}}
       <!-- Full Name -->
       <label>First and Last Name</label>
-      <input type="text" placeholder="First and Last Name">
+      <input type="text" id="fullName" placeholder="First and Last Name" required>
     </div>
     <div class="ui form success">
       <div class="field">
         <!-- Email -->
         <label>E-mail</label>
-        <input type="email" placeholder="joe@schmoe.com">
+        <input type="email" id="email" placeholder="joe@schmoe.com" required>
       </div>
       <div class="field">
         <!-- Company Name -->
         <label>What Company is receiving this CV?</label>
-        <input type="email" placeholder="Company Name">
+        <input type="text" id="company" placeholder="Company Name" required>
       </div>
       <div class="field">
         <!-- Position Title -->
         <label>What position are you applying for?</label>
-        <input type="email" placeholder="job-title">
+        <input type="text" id="position" placeholder="job-title" required>
       </div>
       <!-- Work Experience -->
       <div class="ui form">
@@ -95,135 +100,137 @@
           <!-- Skill Set 1-->
           <div class="ui form">
             <div class="grouped fields">
-              <label for="skillset">   Select Top 3 Skills #1:</label>
+              <label for="skillset1"> Select Top 3 Skills #1:</label>
               <div class="field">
                 <div class="ui radio checkbox checked">
                   <input type="radio" name="skillset" checked="" tabindex="0" value="Problem Solving">
-                  <label>Problem Solving   </label>
+                  <label>Problem Solving </label>
                 </div>
               </div>
               <div class="field">
                 <div class="ui radio checkbox">
                   <input type="radio" name="skillset" tabindex="0" value="Data Analytics">
-                  <label>Data Analytics   </label>
+                  <label>Data Analytics </label>
                 </div>
               </div>
               <div class="field">
                 <div class="ui radio checkbox">
                   <input type="radio" name="skillset" tabindex="0" value="Communication and Teamwork">
-                  <label>Communication and Teamwork   </label>
+                  <label>Communication and Teamwork </label>
                 </div>
               </div>
               <div class="field">
                 <div class="ui radio checkbox">
                   <input type="radio" name="skillset" tabindex="0" value="Programming Languages">
-                  <label>Programming Languages   </label>
+                  <label>Programming Languages </label>
                 </div>
               </div>
               <div class="field">
                 <div class="ui radio checkbox">
                   <input type="radio" name="skillset" tabindex="0" value="Leadership/Management">
-                  <label>Leadership/Management   </label>
+                  <label>Leadership/Management </label>
                 </div>
               </div>
               <div class="field">
                 <div class="ui radio checkbox">
                   <input type="radio" name="skillset" tabindex="0" value="Cyber Security">
-                  <label>Cyber Security   </label>
+                  <label>Cyber Security </label>
                 </div>
               </div>
             </div>
           </div>
-          </div>
-            <!-- Skill Set 2-->
-            <div class="ui form">
-              <div class="grouped fields">
-                <label for="skillset2">   Select Top 3 Skills #2:</label>
-                <div class="field">
-                 <div class="ui radio checkbox checked">
-                  <input type="radio" name="skillset2" checked="" tabindex="0" value="Problem Solving">
-                  <label>Problem Solving   </label>
-                </div>
-              </div>
-              <div class="field">
-                <div class="ui radio checkbox">
-                  <input type="radio" name="skillset2" tabindex="0" value="Data Analytics">
-                  <label>Data Analytics   </label>
-                </div>
-              </div>
-              <div class="field">
-                <div class="ui radio checkbox">
-                  <input type="radio" name="skillset2" tabindex="0" value="Communication and Teamwork">
-                  <label>Communication and Teamwork   </label>
-                </div>
-              </div>
-              <div class="field">
-                <div class="ui radio checkbox">
-                  <input type="radio" name="skillset2" tabindex="0" value="Programming Languages">
-                  <label>Programming Languages   </label>
-                </div>
-              </div>
-              <div class="field">
-                <div class="ui radio checkbox">
-                  <input type="radio" name="skillset2" tabindex="0" value="Leadership/Management">
-                  <label>Leadership/Management   </label>
-                </div>
-              </div>
-              <div class="field">
-                <div class="ui radio checkbox">
-                  <input type="radio" name="skillset2" tabindex="0" value="Cyber Security">
-                  <label>Cyber Security   </label>
-                </div>
-                </div>
+        </div>
+        <!-- Skill Set 2-->
+        <div class="ui form">
+          <div class="grouped fields">
+            <label for="skillset2"> Select Top 3 Skills #2:</label>
+            <div class="field">
+              <div class="ui radio checkbox checked">
+                <input type="radio" name="skillset2" checked="" tabindex="0" value="Problem Solving">
+                <label>Problem Solving </label>
               </div>
             </div>
-              <!-- Skill Set 3-->
-              <div class="ui form">
-                <div class="grouped fields">
-                  <label for="skillset3">   Select Top 3 Skills #3:</label>
-                  <div class="field">
-                    <div class="ui radio checkbox checked">
-                  <input type="radio" name="skillset3" checked="" tabindex="0" value="Problem Solving">
-                  <label>Problem Solving   </label>
-                </div>
+            <div class="field">
+              <div class="ui radio checkbox">
+                <input type="radio" name="skillset2" tabindex="0" value="Data Analytics">
+                <label>Data Analytics </label>
               </div>
-              <div class="field">
-                <div class="ui radio checkbox">
-                  <input type="radio" name="skillset3" tabindex="0" value="Data Analytics">
-                  <label>Data Analytics   </label>
-                </div>
+            </div>
+            <div class="field">
+              <div class="ui radio checkbox">
+                <input type="radio" name="skillset2" tabindex="0" value="Communication and Teamwork">
+                <label>Communication and Teamwork </label>
               </div>
-              <div class="field">
-                <div class="ui radio checkbox">
-                  <input type="radio" name="skillset3" tabindex="0" value="Communication and Teamwork">
-                  <label>Communication and Teamwork   </label>
-                </div>
+            </div>
+            <div class="field">
+              <div class="ui radio checkbox">
+                <input type="radio" name="skillset2" tabindex="0" value="Programming Languages">
+                <label>Programming Languages </label>
               </div>
-              <div class="field">
-                <div class="ui radio checkbox">
-                  <input type="radio" name="skillset3" tabindex="0" value="Programming Languages">
-                  <label>Programming Languages   </label>
-                </div>
+            </div>
+            <div class="field">
+              <div class="ui radio checkbox">
+                <input type="radio" name="skillset2" tabindex="0" value="Leadership/Management">
+                <label>Leadership/Management </label>
               </div>
-              <div class="field">
-                <div class="ui radio checkbox">
-                  <input type="radio" name="skillset3" tabindex="0" value="Leadership/Management">
-                  <label>Leadership/Management   </label>
-                </div>
+            </div>
+            <div class="field">
+              <div class="ui radio checkbox">
+                <input type="radio" name="skillset2" tabindex="0" value="Cyber Security">
+                <label>Cyber Security </label>
               </div>
-              <div class="field">
-                <div class="ui radio checkbox">
-                  <input type="radio" name="skillset3" tabindex="0" value="Cyber Security">
-                  <label>Cyber Security   </label>
-                </div>
-              </div>
-                  </div>
-                </div>
-
-
-
-                <button class="ui primary button" type="submit">Submit</button>
-              </div>
-
             </div>
           </div>
+        </div>
+        <!-- Skill Set 3-->
+        <div class="ui form">
+          <div class="grouped fields">
+            <label for="skillset3"> Select Top 3 Skills #3:</label>
+            <div class="field">
+              <div class="ui radio checkbox checked">
+                <input type="radio" name="skillset3" checked="" tabindex="0" value="Problem Solving">
+                <label>Problem Solving </label>
+              </div>
+            </div>
+            <div class="field">
+              <div class="ui radio checkbox">
+                <input type="radio" name="skillset3" tabindex="0" value="Data Analytics">
+                <label>Data Analytics </label>
+              </div>
+            </div>
+            <div class="field">
+              <div class="ui radio checkbox">
+                <input type="radio" name="skillset3" tabindex="0" value="Communication and Teamwork">
+                <label>Communication and Teamwork </label>
+              </div>
+            </div>
+            <div class="field">
+              <div class="ui radio checkbox">
+                <input type="radio" name="skillset3" tabindex="0" value="Programming Languages">
+                <label>Programming Languages </label>
+              </div>
+            </div>
+            <div class="field">
+              <div class="ui radio checkbox">
+                <input type="radio" name="skillset3" tabindex="0" value="Leadership/Management">
+                <label>Leadership/Management </label>
+              </div>
+            </div>
+            <div class="field">
+              <div class="ui radio checkbox">
+                <input type="radio" name="skillset3" tabindex="0" value="Cyber Security">
+                <label>Cyber Security </label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+        <button class="ui primary button" type="submit" id="submit">Submit</button>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="/js/create-cv.js"></script>
