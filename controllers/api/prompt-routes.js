@@ -41,7 +41,7 @@ router.get('/:id', withAuth, async (req, res) => {
 router.post('/create', withAuth, async (req, res) => {
     try {
         const newPrompt = await Prompt.create({
-            // file_name: req.body.file_name,
+            file_name: req.body.file_name,
             full_name: req.body.full_name,
             email: req.body.email,
             company_name: req.body.company_name,

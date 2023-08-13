@@ -37,7 +37,7 @@ router.post('/:promptid', withAuth, async (req, res) => {
 
         // cerated new letter by using our format
         const newLetter = await Letters.create({
-            // letter_name: `${promptData.letter_name}`,
+            letter_name: `${promptData.file_name}`,
             letter_body: `
             ${promptData.full_name}
             ${promptData.created_at}
