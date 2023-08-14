@@ -1,9 +1,11 @@
+<div class="ui centered grid" style="padding:3em">
 <a class="ui button" href="/dashboard/create" class="{{isActive}} item">
   Create CV
 </a>
+</div>
 <div class="ui column">
   <div class="ui card" style="padding:1em">
-    <h2>Your Cover Letters!:</h2>
+    <h2>Your Cover Letters:</h2>
     <div class="ui feed" id="blog-feed">
       {{#if covers.length}}
       {{#each covers as |letter|}}
@@ -11,5 +13,20 @@
       {{/each}}
       {{/if}}
     </div>
+  </div>
+</div>
+<div class="ui column">
+  <div class="ui card" style="padding:1em">
+    <h2>README Instructions:</h2>
+    <h3> Getting Started </h3>
+      <p> Click on the 'Create CV' Button Above to create your first cover letter file! 
+        Once it is created, you will see it appear with the file name you gave it over to 
+        the left!
+      </p>
+    <h3> Update A Letter </h3>
+      <p> To update a cover letter you made previously, find it on the left side of the 
+        screen and click on it. It will bring you to a new page where you will have the 
+        options to update or delete your letter!
+      </p>
   </div>
 </div>
