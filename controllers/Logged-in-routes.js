@@ -63,6 +63,19 @@ router.get('/create', withAuth, (req, res) => {
     }
 });
 
+//  this is /dashboard/account_update
+router.get('/account_update', withAuth, (req, res) => {
+    try {
+        res.render('account_update', { logged_in: true });
+    } catch (err) {
+        console.log(err);
+        res.status(500).json({
+            message: 'Failed to render account_update page',
+            error: err
+        });
+    }
+});
+
 
 
 module.exports = router;
