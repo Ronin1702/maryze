@@ -49,12 +49,11 @@ Dear Hiring and Recruitment team!
             
 Upon learning that there is a ${promptData.job_title} position opportunity at ${promptData.company_name},
 I was excited to reach out and introduce myself. When reviewing the job description,
-I saw that my skills and experience align with your company's needs and position requirements.
+I saw that my experience and skills align with your company's needs and position requirements.
 What I offer as a professional, I feel collaborates well with your company's core mission and culture.
             
-I am a seasoned professional with over ${promptData.work_exp} years of relevant experience.
-I have developed myself and honed my ${promptData.rel_skills1}, ${promptData.rel_skills2}, and ${promptData.rel_skills3} skill sets,
- making me an ideal fit for the ${promptData.job_title} position.
+I am a seasoned professional with ${promptData.work_exp} of relevant experience.
+I have developed myself and honed my ${promptData.rel_skills1}, ${promptData.rel_skills2}, and ${promptData.rel_skills3} skill sets, making me an ideal fit for the ${promptData.job_title} position.
             
 My current educational level is ${promptData.education_exp}.
             
