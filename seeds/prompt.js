@@ -11,7 +11,8 @@ const promptData = [
         rel_skills1: 'former richest man in the world',
         rel_skills2: null,
         rel_skills3: null,
-        user_id: 1
+        user_id: 1,
+        file_name:'defaultLetterName'
     }
 ]
 
