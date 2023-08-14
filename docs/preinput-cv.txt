@@ -1,0 +1,24 @@
+{{full_name}}
+{{date}}
+{{target.company}}
+{{email}}
+
+Dear Hiring and Recruitment team!
+
+Upon learning that there is a {position.title} position opportunity at {{target.company}}, 
+I was excited to reach out and introduce myself. When reviewing the job description, 
+I saw that my skills and experience align with your company’s needs and position requirements. 
+What I offer as a professional, I feel collaborates well with your company’s core mission and culture.
+
+I am an seasoned professional with over {work.exprience} years of relevant experience. 
+I have developed myself and honed my {skill1}, {skill2}, and {skill3} skill sets, 
+making me an ideal fit for the {position.title} position. 
+
+I am excited at the prospect of bringing my talents to {{target.company}}. 
+I look forward to hearing from you, at your earliest convenience, 
+to discuss how my experience and qualifications will prove valuable in the {position.title} role.
+
+Thank you for your time and consideration. 
+
+Sincerely,
+{{full_name}}

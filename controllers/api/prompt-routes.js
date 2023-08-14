@@ -41,6 +41,7 @@ router.get('/:id', withAuth, async (req, res) => {
 router.post('/create', withAuth, async (req, res) => {
     try {
         const newPrompt = await Prompt.create({
+            file_name: req.body.file_name,
             full_name: req.body.full_name,
             email: req.body.email,
             company_name: req.body.company_name,
@@ -51,8 +52,10 @@ router.post('/create', withAuth, async (req, res) => {
             rel_skills2: req.body.rel_skills2,
             rel_skills3: req.body.rel_skills3,
             user_id: req.session.user_id,
+            created_at: req.body.created_at,
         });
-        res.json(newPrompt);
+        // res.json(newPrompt);
+        return res.status(201).json({ id: newPrompt.id });
     } catch (err) {
         console.log(err);
         res.status(500).json(err);
@@ -70,6 +73,7 @@ router.put('/:id', withAuth, async (req, res) => {
         });
         if (promptData) {
             await promptData.update({
+                // file_name: req.body.file_name,
                 full_name: req.body.full_name,
                 email: req.body.email,
                 company_name: req.body.company_name,
