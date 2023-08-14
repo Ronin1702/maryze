@@ -11,7 +11,7 @@ router.get('/', withAuth, async (req, res) => {
             where: {
                 user_id: req.session.user_id,
             },
-            attributes: ['id', 'letter_name', 'letter_body', 'created_at'],
+            attributes: ['id', 'letter_name', 'letter_body', 'created_at', 'updated_at'],
         });
 
         const covers = cvData.map((cover) => cover.get({ plain: true }));
@@ -33,7 +33,7 @@ router.get('/edit/:id', withAuth, async (req, res) => {
                 id: req.params.id,
                 user_id: req.session.user_id,
             },
-            attributes: ['id', 'letter_name', 'letter_body', 'created_at'],
+            attributes: ['id', 'letter_name', 'letter_body', 'created_at', 'updated_at'],
         });
 
         if (!letterData) {

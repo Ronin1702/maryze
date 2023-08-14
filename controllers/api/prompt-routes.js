@@ -52,6 +52,7 @@ router.post('/create', withAuth, async (req, res) => {
             rel_skills2: req.body.rel_skills2,
             rel_skills3: req.body.rel_skills3,
             user_id: req.session.user_id,
+            created_at: req.body.created_at,
         });
         // res.json(newPrompt);
         return res.status(201).json({ id: newPrompt.id });
