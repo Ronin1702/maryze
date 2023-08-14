@@ -1,5 +1,6 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
+const moment = require('moment');
 
 class Prompt extends Model { }
 
@@ -63,6 +64,14 @@ Prompt.init({
             key: 'id'
         }
     },
+    created_at: {
+        type: DataTypes.DATE,
+        get() {
+            return moment(this.getDataValue('created_at')).format('DD/MM/YYYY');
+        },
+        allowNull: false,
+        defaultValue: DataTypes.NOW,
+    }
 }, {
     sequelize,
     freezeTableName: true,
