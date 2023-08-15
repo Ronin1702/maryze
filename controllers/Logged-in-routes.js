@@ -48,8 +48,6 @@ router.get('/edit/:id', withAuth, async (req, res) => {
     }
 });
 
-
-
 //  this is /dashboard/create to create
 router.get('/create', withAuth, (req, res) => {
     try {
@@ -64,9 +62,21 @@ router.get('/create', withAuth, (req, res) => {
 });
 
 //  this is /dashboard/account_update
-router.get('/account_update', withAuth, (req, res) => {
+router.get('/account_update', withAuth, async(req, res) => {
     try {
-        res.render('account_update', { logged_in: true });
+        const userData = await User.findOne({
+            where:{
+                id:req.session.user_id,
+            },
+            attributes:['id','username','password'],
+        });
+        
+        if(!userData){
+            return res.status(404).json({message:'Can not find user'})
+        }
+
+        const userInfo=userData.get({plain:true}); 
+        res.render('account_update', {userInfo, logged_in: true });
     } catch (err) {
         console.log(err);
         res.status(500).json({
@@ -75,6 +85,7 @@ router.get('/account_update', withAuth, (req, res) => {
         });
     }
 });
+
 
 
 
