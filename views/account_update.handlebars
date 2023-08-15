@@ -4,7 +4,8 @@
     <div class="field">
       <!--Update Account Name-->
       <label>Update Account Name</label>
-      <input type="text" id="accountName" placeholder="Current Account Name: {{ userInfo.username }}" required>
+      <input type="text" id="accountName" placeholder="Current Account Name: {{ userInfo.username }}"
+        value="{{ userInfo.username }}" required>
     </div>
     <div class="ui hidden" data-user-id="{{userInfo.id}}" id="userID">
 
@@ -19,12 +20,12 @@
       <div class="field">
         <!-- Enter New Password -->
         <label>New Password</label>
-        <input type="password" id="newPassword" placeholder="New Password" required>
+        <input type="password" id="newPassword" placeholder="New Password length must be 6+" required>
       </div>
       <div class="field">
         <!-- Enter New Password -->
         <label>Confirm Password</label>
-        <input type="password" id="confirmPassword" placeholder="Confirm New Password" required>
+        <input type="password" id="confirmPassword" placeholder="Confirm New Password Above" required>
       </div>
 
     </div>

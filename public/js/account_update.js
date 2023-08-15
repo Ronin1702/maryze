@@ -7,7 +7,6 @@ async function accountUpdate(event) {
     const confirmPassword = document.querySelector('#confirmPassword').value.trim();
     const userID = document.querySelector('#userID').getAttribute("data-user-id");
 
-    console.log(accountName, newPassword, confirmPassword)
     if (accountName && newPassword && confirmPassword) {
         if (newPassword !== confirmPassword) {
             alert('New Password did not match confirm password')
