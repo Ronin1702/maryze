@@ -45,7 +45,7 @@ body {
 .hero {
     min-height: 5em;
     width: 100%;
-    background-image: radial-gradient(circle farthest-corner at 10% 20%, #0d6efd 0%, rgba(4, 0, 4, 1) 90%);
+    background-image: radial-gradient(circle farthest-corner at 10% 20%, #52C5F2 0%, rgba(4, 0, 4, 1) 90%);
     color: white;
     display: flex;
     align-items: center;

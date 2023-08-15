@@ -1,4 +1,4 @@
-<div class="ui column" id="cvedits"> 
+<div class="ui column mb-5"> 
   <div class="ui card" style="padding:1em">
     <h2>Edit or Delete your cover letter!</h2>
     <h3>Change the letter content in the next textarea:</h3>
@@ -13,18 +13,19 @@
         </h4>
       </div>
     </div>
-    <div class=" row">
+    <div class="row">
       <button type="button" class="btn btn-info mx-auto col-3" id="edit-button">Update CV</button>
       <button type="button" class="btn btn-info mx-auto col-3" id="delete-button">Delete CV</button>
     </div>
   </div>
 </div>
-<div class="ui column" id="cvedits">
+<div class="ui column">
   <div class="ui card" style="padding:1em">
     <h2>Generated cover letter:</h2>
     <textarea rows="30" cols="50" readonly>{{onecover.letter_body}}</textarea>
   </div>
 </div>
+
 
 
 <script src="/js/edit.js"></script>
