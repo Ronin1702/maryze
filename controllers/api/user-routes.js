@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { User } = require('../../models');
 const withAuth = require('../../utils/auth');
+const bcrypt = require ('bcrypt')
 
 // /api/users
 router.post('/', async (req, res) => {
@@ -74,7 +75,6 @@ router.put('/:id', withAuth, async (req, res) => {
         if (userData) {
             await userData.update({
                 username: req.body.username,
-                email: req.body.email,
                 password: req.body.password
             });
             req.session.save(() => {
@@ -110,6 +110,25 @@ router.delete('/:id', withAuth, async (req, res) => {
         res.status(500).json(err);
     }
 });
-
+router.post('/compareOldPassword', withAuth, async (req, res) => {
+    try {
+        const userData = await User.findOne({
+            where: {
+                id: req.session.user_id,
+            },
+        });
+        const user = userData.get({ plain: true })
+        const passwordMatch = await bcrypt.compare(req.body.oldPassword, user.password)
+        console.log('password match', passwordMatch)
+        if (userData) {
+            res.json(({passwordMatch}));
+        } else {
+            res.status(404).json({ message: 'User not found' });
+        }
+    } catch (err) {
+        console.log(err);
+        res.status(500).json(err);
+    }
+});
 
 module.exports = router;

@@ -6,6 +6,9 @@
       <label>Update Account Name</label>
       <input type="text" id="accountName" placeholder="Current Account Name: {{ userInfo.username }}" required>
     </div>
+    <div class="ui hidden" data-user-id="{{userInfo.id}}" id="userID">
+      
+    </div>
     <div class="field">
       <!-- Update Password -->
       {{!-- Confirm old password --}}
@@ -36,4 +39,4 @@
 </div>
 </div>
 
-<script src="/js/create-cv.js"></script>
+<script src="/js/account_update.js"></script>
