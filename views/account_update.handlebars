@@ -3,30 +3,34 @@
     {{!-- Update Input below --}}
     <div class="field">
       <!--Update Account Name-->
-      <label class="text-light">Update Account Name</label>
-      <input type="text" id="accountName" placeholder="Current Account Name: {{ userInfo.username }}" required>
+      <label>Update Account Name</label>
+      <input type="text" id="accountName" placeholder="Current Account Name: {{ userInfo.username }}"
+        value="{{ userInfo.username }}" required>
     </div>
-    <div class="field">
+    <div class="ui hidden" data-user-id="{{userInfo.id}}" id="userID">
+
+    </div>
+    {{!-- <div class="field"> --}}
       <!-- Update Password -->
       {{!-- Confirm old password --}}
-      <label class="text-light">Current Password</label>
+      {{!-- <label>Current Password</label>
       <input type="password" id="oldPassword" placeholder="Old Password" required>
-    </div>
+    </div> --}}
     <div class="ui form success">
       <div class="field">
         <!-- Enter New Password -->
-        <label class="text-light">New Password</label>
-        <input type="password" id="newPassword" placeholder="New Password" required>
+        <label>New Password</label>
+        <input type="password" id="newPassword" placeholder="New Password length must be 6+" required>
       </div>
       <div class="field">
         <!-- Enter New Password -->
-        <label class="text-light">Confirm Password</label>
-        <input type="password" id="confirmPassword" placeholder="Confirm New Password" required>
+        <label>Confirm Password</label>
+        <input type="password" id="confirmPassword" placeholder="Confirm New Password Above" required>
       </div>
 
     </div>
   </div>
- 
+
 
 
   <button class="ui primary button" type="submit" id="submit">Update</button>
@@ -36,4 +40,5 @@
 </div>
 </div>
 
-<script src="/js/create-cv.js"></script>
+<script src="/js/account_update.js"></script>
+<script src="/js/account_delete.js"></script>

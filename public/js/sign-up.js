@@ -17,7 +17,7 @@ async function signup(event) {
             document.location.replace('/dashboard');
 
         } else {
-            alert('Login failed');
+            alert('Sign Up Failed:Username Already Exist,Email Already Used, or Password too Short');
         }
     }
 }

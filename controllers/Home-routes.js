@@ -1,7 +1,5 @@
 const router = require('express').Router();
-// const sequelize = require('sequelize');
-// const { } = require('../models');
-// const withAuth = require('../utils/auth')
+const withAuth = require('../utils/auth')
 
 router.get('/', (req, res) => {
     try {
@@ -15,6 +13,18 @@ router.get('/', (req, res) => {
     }
 });
 
+//if loggedIn, go to /home instead
+router.get('/home', withAuth, (req, res) => {
+    try {
+        res.render('homepage', { logged_in: true});
+    } catch (err) {
+        console.log(err);
+        res.status(500).json({
+            message: 'Failed to render homepage',
+            error: err
+        });
+    }
+});
 // go to log in page
 router.get('/login', (req, res) => {
     // if logged in
