@@ -40,3 +40,4 @@ async function accountUpdate(event) {
     }
 
     document.getElementById('submit').addEventListener('click', accountUpdate);
+}
