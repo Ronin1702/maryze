@@ -1,24 +1,31 @@
-async function signup(event) {
+async function accountUpdate(event) {
     event.preventDefault();
 
-    const username = document.querySelector('#username-signup').value.trim();
-    const email = document.querySelector('#email-signup').value.trim();
-    const password = document.querySelector('#password-signup').value.trim();
+    const accountName = document.querySelector('#accountName').value.trim();
+    // const oldPassword = document.querySelector('#oldPassword').value.trim();
+    const newPassword = document.querySelector('#newPassword').value.trim();
+    const confirmPassword = document.querySelector('#confirmPassword').value.trim();
+    const userID = document.querySelector('#userID').getAttribute("data-user-id");
 
-    console.log(username, email, password)
-    if (username && password && email) {
-        const response = await fetch('/api/users', {
-            method: 'POST',
-            body: JSON.stringify({ username, email, password }),
-            headers: { 'Content-Type': 'application/json' }
-        });
-        if (response.ok) {
-            console.log('You just created a new account!')
-            document.location.replace('/dashboard');
-
+    console.log(accountName, newPassword, confirmPassword)
+    if (accountName && newPassword && confirmPassword) {
+        if (newPassword !== confirmPassword) {
+            alert('New Password did not match confirm password')
         } else {
-            alert('Login failed');
+            const response = await fetch(`/api/users/${userID}`, {
+                method: 'PUT',
+                body: JSON.stringify({ username: accountName, password: newPassword, }),
+                headers: { 'Content-Type': 'application/json' }
+            });
+            if (response.ok) {
+                console.log('You just updated an old account!')
+                document.location.replace('/dashboard');
+
+            } else {
+                alert('Update failed');
+            }
         }
     }
 }
-document.querySelector('#signup-form').addEventListener('submit', signup);
+
+document.getElementById('submit').addEventListener('click', accountUpdate);

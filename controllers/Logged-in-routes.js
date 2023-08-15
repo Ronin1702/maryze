@@ -86,7 +86,4 @@ router.get('/account_update', withAuth, async(req, res) => {
     }
 });
 
-
-
-
 module.exports = router;
