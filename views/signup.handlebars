@@ -1,7 +1,7 @@
 <div class="ui container">
-  <div class="ui border-info mt-3">
-    <h3 class="ui center aligned header text-light">Sign Up</h3>
-    <form id="signup-form" class="ui card item">
+<div class="ui mt-3">
+  <h3 class="ui center aligned header text-light">Sign Up</h3>
+    <form id="signup-form" class="ui form item">
       <label for="username-signup" class="ui form label bg-dark text-light">Username</label>
       <input id="username-signup" type="text" class="ui form input" />
 
@@ -11,8 +11,9 @@
       <label class="ui form label bg-dark text-light" for="password-signup">Password</label>
       <input id="password-signup" type="password" placeholder="Password length must be 6+" class="form-input" />
 
-      <button type="submit" class="ui button bg-info text-light">Signup!</button>
-      <a class="ui purple button text-light" href="/login">Log in instead</a>
+      <div class="row">
+      <button type="submit" class="btn btn-info mx-auto col-3 mt-3">Signup!</button>
+      <a class="btn btn-info mx-auto col-3 mt-3" href="/login">Log in instead</a>
     </form>
   </div>
 

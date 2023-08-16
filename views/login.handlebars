@@ -1,7 +1,7 @@
 <div class="ui container">
-<div class="ui border-info mt-3">
+<div class="ui mt-3">
   <h3 class="ui center aligned header text-light">Login</h3>
-  <form id="login-form" class="ui card body border border-info">
+  <form id="login-form" class="ui form body">
     <label class="ui form label bg-dark text-light" for="username-login ">Username</label>
     <input id="username-login" type="text" autofocus="true" class="form-input" />
 
@@ -9,8 +9,10 @@
     <label class="ui form label bg-dark text-light" for="password-login" >Password</label>
     <input id="password-login" type="password" autofocus="true" class="form-input" />
 
-    <button type="submit" class="ui purple button text-light">Login!</button>
-    <a class="ui button bg-info text-light" href="/signup">Sign up instead</a>
+    <div class="ui row">
+    <button type="submit" class="btn btn-info mx-auto col-3 mt-3">Login!</button>
+    <a class="btn btn-info mx-auto col-3 mt-3" href="/signup">Sign up instead</a>
+    </div>
   </form>
 </div>
 </div>
