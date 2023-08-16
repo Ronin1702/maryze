@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { User } = require('../../models');
 const withAuth = require('../../utils/auth');
+const bcrypt = require('bcrypt');
 
 // /api/users
 router.post('/', async (req, res) => {
@@ -110,5 +111,27 @@ router.delete('/:id', withAuth, async (req, res) => {
     }
 });
 
+router.post('/check-password/:id', withAuth, async (req, res) => {
+    try {
+        const userId = req.params.id;
+        const userData = await User.findByPk(userId);
+
+        if (!userData) {
+            res.status(404).json({ message: 'User not found' });
+            return;
+        }
+
+        const { password } = req.body;
+
+        // Compare the provided password with the hashed password stored in the database
+        const passwordMatches = await bcrypt.compare(password, userData.password);
+
+        console.log('Password matches:', passwordMatches);
+        res.json({ passwordMatches });
+    } catch (err) {
+        console.log(err);
+        res.status(500).json(err);
+    }
+});
 
 module.exports = router;
