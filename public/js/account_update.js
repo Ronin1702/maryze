@@ -1,29 +1,52 @@
 async function accountUpdate(event) {
-    //it seems like the accountUpdate function was being called twice that's why the alert window pops twice based on the console log
-    console.log("accountUpdate function called");
     event.preventDefault();
 
     const accountName = document.querySelector('#accountName').value.trim();
-    // const oldPassword = document.querySelector('#oldPassword').value.trim();
+    const oldPassword = document.querySelector('#oldPassword').value.trim();
     const newPassword = document.querySelector('#newPassword').value.trim();
     const confirmPassword = document.querySelector('#confirmPassword').value.trim();
     const userID = document.querySelector('#userID').getAttribute("data-user-id");
 
-    if (accountName && newPassword && confirmPassword) {
-        if (newPassword !== confirmPassword) {
-            alert('New Password did not match confirm password')
-        } else {
-            const response = await fetch(`/api/users/${userID}`, {
-                method: 'PUT',
-                body: JSON.stringify({ username: accountName, password: newPassword, }),
+    if (accountName && newPassword && confirmPassword && oldPassword) {
+        try {
+            const checkPasswordResponse = await fetch(`/api/users/check-password/${userID}`, {
+                method: 'POST',
+                body: JSON.stringify({ password: oldPassword }),
                 headers: { 'Content-Type': 'application/json' }
             });
-            if (response.ok) {
-                console.log('You just updated an old account!')
-                document.location.replace('/dashboard');
+
+            if (checkPasswordResponse.ok) {
+                const { passwordMatches } = await checkPasswordResponse.json();
+
+                if (passwordMatches) {
+                    if (newPassword !== confirmPassword) {
+                        alert('New Password did not match confirm password');
+                        return;
+                    } else {
+                        const updateResponse = await fetch(`/api/users/${userID}`, {
+                            method: 'PUT',
+                            body: JSON.stringify({ username: accountName, password: newPassword }),
+                            headers: { 'Content-Type': 'application/json' }
+                        });
+
+                        if (updateResponse.ok) {
+                            console.log('You just updated an old account!');
+                            document.location.replace('/dashboard');
+                        } else {
+                            alert('Update failed');
+                            return;
+                        }
+                    }
+                } else {
+                    alert('Old Password is incorrect');
+                    return;
+                }
             } else {
-                alert('Update failed');
+                alert('Failed to check old password');
+                return;
             }
+        } catch (error) {
+            console.error(error);
         }
     }
 }
