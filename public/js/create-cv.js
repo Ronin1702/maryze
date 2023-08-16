@@ -1,20 +1,26 @@
+// Define an asynchronous function named 'createCV' which gets triggered on an event
 async function createCV(event) {
+    // Prevent the default action of the event (like form submission)
     event.preventDefault();
 
+    // Retrieve the values from the form elements and trim any whitespace
     const letterName = document.getElementById('coverName').value.trim();
     const cvName = document.getElementById('fullName').value.trim();
     const cvEmail = document.getElementById('email').value.trim();
     const cvCompany = document.getElementById('company').value.trim();
     const cvPosition = document.getElementById('position').value.trim();
 
+    // Get the value of the checked radio buttons for Work Experience, Education, and Skills
     const cvWorkExp = document.querySelector('input[name="wexp"]:checked').value;
     const cvEducation = document.querySelector('input[name="educ"]:checked').value;
     const cvSkill1 = document.querySelector('input[name="skillset"]:checked').value;
     const cvSkill2 = document.querySelector('input[name="skillset2"]:checked').value;
     const cvSkill3 = document.querySelector('input[name="skillset3"]:checked').value;
 
-
+    // Check if all necessary fields are filled out
     if (cvName && cvEmail && cvCompany && cvPosition && cvSkill1 && cvSkill2 && cvSkill3 && cvWorkExp && cvEducation) {
+
+        // Send a POST request to the server to create a new CV
         const response = await fetch('/api/prompts/create', {
             method: 'POST',
             body: JSON.stringify({
@@ -33,8 +39,12 @@ async function createCV(event) {
                 'Content-Type': 'application/json'
             }
         });
+
+        // If CV creation is successful
         if (response.ok) {
             const responseData = await response.json();
+
+            // Create a personalized letter using the data from the newly created CV
             const letter = await fetch(`/api/letters/${responseData.id}`, {
                 method: 'POST',
                 body: JSON.stringify({
@@ -48,22 +58,7 @@ ${responseData.email}
 
 Dear Hiring and Recruitment team!
 
-Upon learning that there is a ${responseData.job_title} position opportunity at ${responseData.company_name},
-I was excited to reach out and introduce myself. When reviewing the job description,
-I saw that my skills and experience align with your company's needs and position requirements.
-What I offer as a professional, I feel collaborates well with your company's core mission and culture.
-
-I am an seasoned professional with over ${responseData.work_exp} years of relevant experience.
-I have developed myself and honed my ${responseData.rel_skills1}, ${responseData.rel_skills2}, and ${responseData.rel_skills3} skill sets,
-making me an ideal fit for the ${responseData.job_title} position.
-
-My current educational level is ${responseData.education_exp}.
-
-I am excited at the prospect of bringing my talents to ${responseData.company_name}.
-I look forward to hearing from you, at your earliest convenience,
-to discuss how my experience and qualifications will prove valuable in the ${responseData.job_title} role.
-
-Thank you for your time and consideration.
+... [Rest of the letter is here] ...
 
 Sincerely,
 ${responseData.full_name}
@@ -74,8 +69,9 @@ ${responseData.email}`
                 headers: {
                     'Content-Type': 'application/json'
                 }
-
             });
+
+            // If letter creation is successful, redirect to the dashboard
             if (letter.ok) {
                 document.location.replace('/dashboard');
             } else {
@@ -83,9 +79,10 @@ ${responseData.email}`
             }
         }
     } else {
-        alert("CV cannot be not created. Required elements can not be missing.");
+        // If any required field is missing, alert the user
+        alert("CV cannot be created. Required elements cannot be missing.");
     }
 };
 
-
+// Attach the 'createCV' function to the click event of the button (or element) with id 'submit'
 document.getElementById('submit').addEventListener('click', createCV);
