@@ -1,27 +1,27 @@
-<div class="ui column mb-5"> 
-  <div class="ui card" style="padding:1em">
-    <h2>Edit or Delete your cover letter!</h2>
-    <h3>Change the letter content in the next textarea:</h3>
+<div class="ui column"> 
+  <div class="ui" style="padding:1em">
+    <h2 class="text-light">Edit or Delete your cover letter!</h2>
+    <h3 class="text-light">Change the letter content in the next textarea:</h3>
     <div class="ui form">
       <div class="field">
         <label>
-          <h4>Letter name: <input type="text" class="form-control" value="{{onecover.letter_name}}" id="letter_name">
+          <h4 class="text-light">Letter name: <input type="text" class="form-control" value="{{onecover.letter_name}}" id="letter_name">
           </h4>
         </label>
-        <h4>Letter content:
+        <h4 class="text-light">Letter content:
           <textarea rows="30" cols="50" id="body">{{onecover.letter_body}}</textarea>
         </h4>
       </div>
     </div>
     <div class="row">
-      <button type="button" class="btn btn-info mx-auto col-3" id="edit-button">Update CV</button>
-      <button type="button" class="btn btn-info mx-auto col-3" id="delete-button">Delete CV</button>
+      <button type="button" class="btn btn-info mx-auto mt-3 col-3" id="edit-button">Update CV</button>
+      <button type="button" class="btn btn-info mx-auto mt-3 col-3" id="delete-button">Delete CV</button>
     </div>
   </div>
 </div>
 <div class="ui column">
-  <div class="ui card" style="padding:1em">
-    <h2>Generated cover letter:</h2>
+  <div class="ui form" style="padding:1em">
+    <h2 class="text-light">Generated cover letter:</h2>
     <textarea rows="30" cols="50" readonly>{{onecover.letter_body}}</textarea>
   </div>
 </div>

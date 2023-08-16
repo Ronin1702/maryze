@@ -4,7 +4,7 @@
 }
 
 body {
-    background-color: rgb(27, 27, 27) !important;
+    background-color: #102A43 !important;
 }
 
 .hidden {
@@ -80,6 +80,7 @@ body {
 
 .navbar {
     padding: 0 !important;
+    background-color: #000000 !important;
 }
 
 .ui.ui.secondary.inverted.pointing.menu .active.item {
@@ -119,7 +120,7 @@ body {
 
 .ui.card .meta,
 .ui.cards>.card .meta {
-    color: #191919 !important;
+    color: #102A43 !important;
 }
 
 @media screen and (min-width: 768px) {

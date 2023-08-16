@@ -1,9 +1,11 @@
+<div class="ui container">
+<div class="ui mt-3">
 <div class="ui form padding-100">
   <div class="grouped fields">
     {{!-- Update Input below --}}
     <div class="field">
       <!--Update Account Name-->
-      <label>Update Account Name</label>
+      <label class="text-light">Update Account Name</label>
       <input type="text" id="accountName" placeholder="Current Account Name: {{ userInfo.username }}"
         value="{{ userInfo.username }}" required>
     </div>
@@ -19,12 +21,12 @@
     <div class="ui form success">
       <div class="field">
         <!-- Enter New Password -->
-        <label>New Password</label>
+        <label class="text-light">New Password</label>
         <input type="password" id="newPassword" placeholder="New Password length must be 6+" required>
       </div>
       <div class="field">
         <!-- Enter New Password -->
-        <label>Confirm Password</label>
+        <label class="text-light">Confirm Password</label>
         <input type="password" id="confirmPassword" placeholder="Confirm New Password Above" required>
       </div>
 
@@ -32,9 +34,10 @@
   </div>
 
 
-
-  <button class="ui primary button" type="button" id="updateAccount">Update</button>
-  <button class="ui primary button" type="button" id="deleteAccount">Delete Account</button>
+  <div class="ui row">
+  <button class="btn btn-info mx-auto col-3 mt-3" type="submit" id="submit">Update</button>
+  <button class="btn btn-info mx-auto col-3 mt-3" type="delete" id="deleteAccount">Delete Account</button>
+  </div>
 </div>
 
 </div>
