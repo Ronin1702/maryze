@@ -15,11 +15,14 @@
     integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 </head>
 
-<body>
-
+<body class="flex-container">
+  
   {{> header}}
-  {{{ body }}}
-  <div class="ui bg-black fixed-bottom position-absolute mx-auto">
+  <!-- This wrapper will contain all content and grow to take up available space -->
+  <div class="content-wrapper">
+    {{{ body }}}
+  </div>
+  <div class="ui bg-black mx-auto">
     <div class="ui container">
       <div class="ui">
         <div class="row">
@@ -31,7 +34,7 @@
       </div>
     </div>
   </div>
-  
+
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.min.js"></script>
   <link rel="stylesheet" type="text/css" href="/semantic/dist/semantic.min.css" />
   <script src="/semantic/dist/semantic.min.js"></script>
