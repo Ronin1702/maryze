@@ -21,6 +21,10 @@ async function accountUpdate(event) {
                 if (passwordMatches) {
                     if (newPassword !== confirmPassword) {
                         alert('New Password did not match confirm password');
+<<<<<<< HEAD
+=======
+                        return;
+>>>>>>> origin/main
                     } else {
                         const updateResponse = await fetch(`/api/users/${userID}`, {
                             method: 'PUT',
@@ -33,13 +37,25 @@ async function accountUpdate(event) {
                             document.location.replace('/dashboard');
                         } else {
                             alert('Update failed');
+<<<<<<< HEAD
+=======
+                            return;
+>>>>>>> origin/main
                         }
                     }
                 } else {
                     alert('Old Password is incorrect');
+<<<<<<< HEAD
                 }
             } else {
                 alert('Failed to check old password');
+=======
+                    return;
+                }
+            } else {
+                alert('Failed to check old password');
+                return;
+>>>>>>> origin/main
             }
         } catch (error) {
             console.error(error);
@@ -47,4 +63,15 @@ async function accountUpdate(event) {
     }
 }
 
+<<<<<<< HEAD
 document.getElementById('submit').addEventListener('click', accountUpdate);
+=======
+//I'm creating a bypass down here by redefining the button, remove the listener, then adding it back so that it only listens once.
+const updateAccountButton = document.getElementById('updateAccount');
+
+// Before adding a new event listener, it's a good practice to remove any old ones to prevent duplicates.
+updateAccountButton.removeEventListener('click', accountUpdate);
+
+// Now, attach the event listener
+updateAccountButton.addEventListener('click', accountUpdate);
+>>>>>>> origin/main
