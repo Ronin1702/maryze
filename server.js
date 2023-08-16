@@ -13,11 +13,16 @@ const PORT = process.env.PORT || 3001;
 
 const sess = {
     secret: process.env.SESSION_SECRET,
-    cookie: { maxAge: 15 * 60 * 1000, },
+    //removed maxAge to clear all cookies on close
+    cookie: {},
     resave: false,
     saveUninitialized: true,
     store: new SequelizeStore({
         db: sequelize,
+        // Check every 15 minutes
+        checkExpirationInterval: 15 * 60 * 1000,
+        // The maximum age of a valid session; here it's also 15 minutes.
+        expiration: 15 * 60 * 1000
     }),
 };
 
