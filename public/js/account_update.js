@@ -1,4 +1,6 @@
 async function accountUpdate(event) {
+    //it seems like the accountUpdate function was being called twice that's why the alert window pops twice based on the console log
+    console.log("accountUpdate function called");
     event.preventDefault();
 
     const accountName = document.querySelector('#accountName').value.trim();
@@ -19,7 +21,6 @@ async function accountUpdate(event) {
             if (response.ok) {
                 console.log('You just updated an old account!')
                 document.location.replace('/dashboard');
-
             } else {
                 alert('Update failed');
             }
@@ -27,4 +28,11 @@ async function accountUpdate(event) {
     }
 }
 
-document.getElementById('submit').addEventListener('click', accountUpdate);
+//I'm creating a bypass down here by redefining the button, remove the listener, then adding it back so that it only listens once.
+const updateAccountButton = document.getElementById('updateAccount');
+
+// Before adding a new event listener, it's a good practice to remove any old ones to prevent duplicates.
+updateAccountButton.removeEventListener('click', accountUpdate);
+
+// Now, attach the event listener
+updateAccountButton.addEventListener('click', accountUpdate);
