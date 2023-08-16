@@ -61,8 +61,8 @@ router.get('/create', withAuth, (req, res) => {
     }
 });
 
-//  this is /dashboard/account_update
-router.get('/account_update', withAuth, async(req, res) => {
+//  this is /dashboard/account-update
+router.get('/account-update', withAuth, async(req, res) => {
     try {
         const userData = await User.findOne({
             where:{
@@ -76,11 +76,11 @@ router.get('/account_update', withAuth, async(req, res) => {
         }
 
         const userInfo=userData.get({plain:true}); 
-        res.render('account_update', {userInfo, logged_in: true });
+        res.render('account-update', {userInfo, logged_in: true });
     } catch (err) {
         console.log(err);
         res.status(500).json({
-            message: 'Failed to render account_update page',
+            message: 'Failed to render account-update page',
             error: err
         });
     }

@@ -1,6 +1,6 @@
-const User = require('./user');
-const Prompt = require('./prompt');
-const Letters = require('./letters');
+const User = require('./User');
+const Prompt = require('./Prompt');
+const Letters = require('./Letters');
 
 
 Prompt.hasOne(Letters, {
