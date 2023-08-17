@@ -148,7 +148,9 @@ THEN I am logged out and taken back to the Home page where only Home and Login o
 
 ## Walkthrough Video
 
-<!-- [![image name](gif link)](actualy video link) -->
+- Click the image below to play
+
+[![Walkthrough Video](./images/screencapture-maryze-t1p2-1c897d7fd819-herokuapp-2023-08-17-16_50_02.png)](https://drive.google.com/file/d/168_3zwtrOHnZvGCCKK5GdtYncybaK7t_/view)
 
 [_back to top_](#table-of-contents)
 
