@@ -22,7 +22,7 @@ SO THAT I can create, update, and delete cover letters.
 
 [_back to top_](#table-of-contents)
 
-## Technolog
+## Technology
 
 - [![Node.js](https://img.shields.io/badge/Node.js®-v20.5.1-blue?logo=node.js)](https://nodejs.org/en)
 
