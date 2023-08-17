@@ -148,7 +148,7 @@ THEN I am logged out and taken back to the Home page where only Home and Login o
 
 ## Walkthrough Video
 
-<!-- [![image name](gif link)](actualy video link) -->
+[![GIF Holder](./images/Maryze.gif)](https://drive.google.com/file/d/1fncWg_ncN4H1Sglt8-Yu878VReUhMuAu/view)
 
 [_back to top_](#table-of-contents)
 
