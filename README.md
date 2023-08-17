@@ -146,22 +146,9 @@ THEN I am logged out and taken back to the Home page where only Home and Login o
 
 [_back to top_](#table-of-contents)
 
-## Screenshots
+## Walkthrough Video
 
 - Home Page when Not Logged In
-  <!-- ![Home](./images/Home.png) -->
-- Home Page When Logged In
-  <!-- ![Home](./images/Home.png) -->
-- Sign Up
-  <!-- ![Sign-up](./images/Signup.png) -->
-- Login
-  <!-- ![Login Page](./images/Login.png) -->
-- Dashboard Page
-  <!-- ![Posts and Comments](./images/Comment.png) -->
-- Edit Page
-  <!-- ![Dashboard Page](./images/Dashboard.png) -->
-- Account Update Page
-  <!-- ![Update/Delete](./images/UpdateAndDelete.png) -->
 
 [_back to top_](#table-of-contents)
 
