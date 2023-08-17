@@ -1,3 +1,4 @@
+
 // Define an asynchronous function named 'deleteCV' which gets triggered on an event
 async function deleteCV(event) {
     // Prevent the default action of the event (like form submission or button click)

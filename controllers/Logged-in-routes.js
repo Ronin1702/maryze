@@ -1,3 +1,4 @@
+
 const router = require('express').Router();
 const sequelize = require('sequelize');
 const { Letters, Prompt, User } = require('../models');

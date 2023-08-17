@@ -1,3 +1,4 @@
+
 // Define an asynchronous function named 'createCV' which gets triggered on an event
 async function createCV(event) {
     // Prevent the default action of the event (like form submission)

@@ -1,3 +1,4 @@
+
 const { Prompt } = require('../models');
 
 const promptData = [

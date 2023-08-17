@@ -1,3 +1,4 @@
+
 // Define an asynchronous function to handle user logout
 const logout = async () => {
     // Send a GET request to the server's logout endpoint to initiate the logout process

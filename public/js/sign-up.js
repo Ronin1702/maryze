@@ -1,3 +1,4 @@
+
 // Define an asynchronous function to handle the user signup process
 async function signup(event) {
     // Prevent the default action of the form submission (e.g., page refresh)

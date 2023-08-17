@@ -1,3 +1,4 @@
+
 // Define an asynchronous function named 'accountDelete' which gets triggered on an event
 async function accountDelete(event) {
     // Prevent the default action of the event (like form submission or button click)

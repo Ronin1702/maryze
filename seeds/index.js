@@ -1,3 +1,4 @@
+
 const sequelize = require('../config/connection');
 const coverLetter = require('./cover-letter');
 const prompt = require('./prompt');

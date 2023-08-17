@@ -16,7 +16,7 @@ making me an ideal fit for the {position.title} position.
 
 I am excited at the prospect of bringing my talents to {{target.company}}. 
 I look forward to hearing from you, at your earliest convenience, 
-to discuss how my experience and qualifications will prove valuable in the {position.title} role.
+to discuss how my experience and qualifications will prove valuable in the {position.title} role. 
 
 Thank you for your time and consideration. 
 
