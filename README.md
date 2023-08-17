@@ -1,6 +1,6 @@
 # Maryze [![MIT](https://img.shields.io/static/v1.svg?label=📃%20License&message=MIT&color=important)](./LICENSE)
 
-*[Maryze](https://cover-letter-generator-3000-7a5be5cf3592.herokuapp.com/)*, a short twist from the term summarize, is a cover letter generator website where the account holders can create, update and delete cover letters.
+*[Maryze](https://maryze-t1p2-1c897d7fd819.herokuapp.com/)*, a short twist from the term summarize, is a cover letter generator website where the account holders can create, update and delete cover letters.
 
 ## Table of Contents
 
@@ -27,15 +27,15 @@ SO THAT I can create, update, and delete cover letters.
 - [![Node.js](https://img.shields.io/badge/Node.js®-v20.5.1-blue?logo=node.js)](https://nodejs.org/en)
 
 - [![npm](https://img.shields.io/badge/npm-v9.8.1-blue?logo=npm)](https://docs.npmjs.com/cli/v9/)
-  - [![bcrypt Package](https://img.shields.io/badge/bcrypt-5.1.0-green?logo=npm)](https://www.npmjs.com/package/bcrypt)
-  - [![connect-session-sequelize Package](https://img.shields.io/badge/Connect--Session--Sequelize-7.1.7-green?logo=npm)](https://www.npmjs.com/package/connect-session-sequelize)
-  - [![DotEnv Package](https://img.shields.io/badge/DotEnv-16.3.1-green?logo=dotenv)](https://www.npmjs.com/package/dotenv)
-  - [![Express Package](https://img.shields.io/badge/Express-4.18.2-green?logo=express)](https://www.npmjs.com/package/express)
-  - [![express-handlebars Package](https://img.shields.io/badge/Express--Handlebars-7.1.1-green?logo=express)](https://www.npmjs.com/package/express-handlebars)
-  - [![express-session Package](https://img.shields.io/badge/Express--Session-1.17.3-green?logo=express)](https://www.npmjs.com/package/express-session)
+  - [![bcrypt Package](https://img.shields.io/badge/bcrypt-5.0.0-green?logo=npm)](https://www.npmjs.com/package/bcrypt)
+  - [![connect-session-sequelize Package](https://img.shields.io/badge/Connect--Session--Sequelize-7.0.4-green?logo=npm)](https://www.npmjs.com/package/connect-session-sequelize)
+  - [![DotEnv Package](https://img.shields.io/badge/DotEnv-8.2.0-green?logo=dotenv)](https://www.npmjs.com/package/dotenv)
+  - [![Express Package](https://img.shields.io/badge/Express-4.17.1-green?logo=express)](https://www.npmjs.com/package/express)
+  - [![express-handlebars Package](https://img.shields.io/badge/Express--Handlebars-5.2.0-green?logo=express)](https://www.npmjs.com/package/express-handlebars)
+  - [![express-session Package](https://img.shields.io/badge/Express--Session-1.17.1-green?logo=express)](https://www.npmjs.com/package/express-session)
   - [![Fomantic-UI Package](https://img.shields.io/badge/Fomantic--UI-2.9.2-green?logo=npm)](https://fomantic-ui.com/)
-  - [![MySQL2 Package](https://img.shields.io/badge/MySQL2-2.1.0-green?logo=mysql)](https://www.npmjs.com/package/mysql2)
-  - [![Sequelize Package](https://img.shields.io/badge/sequelize-5.21.7-green?logo=sequelize)](https://www.npmjs.com/package/sequelize)
+  - [![MySQL2 Package](https://img.shields.io/badge/MySQL2-2.2.5-green?logo=mysql)](https://www.npmjs.com/package/mysql2)
+  - [![Sequelize Package](https://img.shields.io/badge/sequelize-6.3.5-green?logo=sequelize)](https://www.npmjs.com/package/sequelize)
 
 [_back to top_](#table-of-contents)
 
@@ -131,7 +131,7 @@ THEN the CV is deleted forever
 WHEN I click on the Account Update option in the Nav Bar
 THEN I am taken to the Account Update page where a form to update account name, new password, and confirm password is displayed and the current account name is already inserted in the input box
 WHEN I click on the Update button
-IF I have filled out all three requirements
+IF I have filled out all three requirements correctly
 THEN the account is updated
 ELSE an alert window will pop up and inform the user the error
 WHEN I click on the Delete Account button
@@ -146,31 +146,18 @@ THEN I am logged out and taken back to the Home page where only Home and Login o
 
 [_back to top_](#table-of-contents)
 
-## Screenshots
+## Walkthrough Video
 
-- Home Page when Not Logged In
-  <!-- ![Home](./images/Home.png) -->
-- Home Page When Logged In
-  <!-- ![Home](./images/Home.png) -->
-- Sign Up
-  <!-- ![Sign-up](./images/Signup.png) -->
-- Login
-  <!-- ![Login Page](./images/Login.png) -->
-- Dashboard Page
-  <!-- ![Posts and Comments](./images/Comment.png) -->
-- Edit Page
-  <!-- ![Dashboard Page](./images/Dashboard.png) -->
-- Account Update Page
-  <!-- ![Update/Delete](./images/UpdateAndDelete.png) -->
+<!-- [![image name](gif link)](actualy video link) -->
 
 [_back to top_](#table-of-contents)
 
 ## Links
 
-[![Tweet about this](https://img.shields.io/static/v1.svg?label=Tweet%20about%20this&message=🎵&color=blue&logo=twitter&style=social)](https://twitter.com/intent/tweet?text=Check%20out%20this%20Cover-Letter-Generator%20App%20on%20Heroku:%20https://cover-letter-generator-3000-7a5be5cf3592.herokuapp.com/%20)
+[![Tweet about this](https://img.shields.io/static/v1.svg?label=Tweet%20about%20this&message=🎵&color=blue&logo=twitter&style=social)](https://rb.gy/7e04h)
 
-- GitHub Repo: [Cover-Letter-Generator](https://github.com/Ronin1702/project2)
-- Deployed _Heroku_ Application: [Cover-Letter-Generator-3000](https://cover-letter-generator-3000-7a5be5cf3592.herokuapp.com/)
+- GitHub Repo: [Maryze](https://github.com/Ronin1702/maryze)
+- Deployed _Heroku_ Application: [Maryze](https://maryze-t1p2-1c897d7fd819.herokuapp.com/)
 
 [_back to top_](#table-of-contents)
 
@@ -182,4 +169,4 @@ THEN I am logged out and taken back to the Home page where only Home and Login o
 
 ---
 
-[![Copyright](https://img.shields.io/static/v1.svg?label=Cover%20Letter%20Generator%203000%20&©️%20&message=%202023%20Team%20One&labelColor=informational&color=033450)](https://cover-letter-generator-3000-7a5be5cf3592.herokuapp.com/)
+[![Copyright](https://img.shields.io/static/v1.svg?label=Maryze%20©️%20&message=%202023%20Team%20One&labelColor=informational&color=033450)](https://maryze-t1p2-1c897d7fd819.herokuapp.com/)
